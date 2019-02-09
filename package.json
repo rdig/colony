@@ -21,6 +21,7 @@
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
     "@babel/register": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
     "babel-loader": "^8.0.5",
     "clean-webpack-plugin": "^1.0.1",
     "eslint": "^5.13.0",
@@ -29,9 +30,15 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
     "webpack": "^4.29.3",
-    "webpack-cli": "^3.2.3"
+    "webpack-cli": "^3.2.3",
+    "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
-    "chalk": "^2.4.2"
+    "@colony/colony-js-adapter-ethers": "^1.10.0",
+    "@colony/colony-js-client": "^1.10.0",
+    "@colony/colony-js-contract-loader-network": "^1.6.2",
+    "@colony/purser-software": "^1.2.4",
+    "chalk": "^2.4.2",
+    "ethers": "3.0.27"
   }
 }

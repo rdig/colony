@@ -1,8 +1,3 @@
-import chalk from 'chalk';
+import networkConnect from './networkConnect';
 
-const log = (...msg) => console.log(
-  chalk.green(`[${new Date().toLocaleString()}]`),
-  ...msg,
-);
-
-log('Hello you!');
+networkConnect();
