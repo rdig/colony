@@ -20,10 +20,12 @@ export const CONTEXT_HELP = {
 
 export const ACTION = {
   LIST: ['list', 'ls', 'l'],
+  COUNT: ['count', 'c'],
 };
 
 export const ACTION_HELP = {
-  LIST: 'List action, in the currently selected context',
+  LIST: 'List the entries in the current context',
+  COUNT: 'Count the entries in the current context',
 };
 
 /*

@@ -33,7 +33,7 @@ const validateAction = (currentAction) => {
 const normalizeActionAlias = (currentAction) => {
   const actionKeys = Object.keys(ACTION);
   for (let i = 0; i < actionKeys.length; i += 1) {
-    if (ACTION[actionKeys[i]].findIndex(action => action === currentAction)) {
+    if (ACTION[actionKeys[i]].findIndex(action => action === currentAction) >= 0) {
       return ACTION[actionKeys[i]][0];
     }
   }
