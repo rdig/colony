@@ -1,12 +1,12 @@
 export const RINKEBY = 'rinkeby';
 
-export const CONTEXTS = [
-  'colony',
-  'network',
-  'token',
-];
+export const CONTEXT = {
+  COLONY: 'colony',
+  NETWORK: 'network',
+  TOKEN: 'token',
+};
 
-export const ACTIONS = {
+export const ACTION = {
   LIST: ['list', 'ls', 'l'],
 };
 

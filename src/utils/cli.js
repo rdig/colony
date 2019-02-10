@@ -2,12 +2,13 @@ import minimist from 'minimist';
 import chalk from 'chalk';
 import flattenDeep from 'lodash.flattendeep';
 
-import { CONTEXTS, ACTIONS, STATUS } from '~const';
+import { CONTEXT, ACTION, STATUS } from '~const';
 
 const { _: query, ...options } = minimist(process.argv.slice(2));
 
 const validateContext = (currentContext) => {
-  const contextIndex = CONTEXTS.findIndex(context => context === currentContext);
+  const contextIndex = flattenDeep(Object.values(CONTEXT))
+    .findIndex(context => context === currentContext);
   if (contextIndex >= 0) {
     return currentContext;
   }
@@ -16,7 +17,7 @@ const validateContext = (currentContext) => {
 };
 
 const validateAction = (currentAction) => {
-  const actionIndex = flattenDeep(Object.values(ACTIONS))
+  const actionIndex = flattenDeep(Object.values(ACTION))
     .findIndex(action => action === currentAction);
   if (actionIndex >= 0) {
     return currentAction;
