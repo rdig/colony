@@ -4,3 +4,4 @@ export { default as getSoftwareWallet } from './getSoftwareWallet';
 export { default as getAdapter } from './getAdapter';
 
 export { default as asyncCall } from './asyncCall';
+export * from './cli';
