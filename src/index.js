@@ -1,3 +1,5 @@
-import networkConnect from './networkConnect';
+import networkClient from './networkClient';
 
-networkConnect();
+networkClient();
+
+process.exit();

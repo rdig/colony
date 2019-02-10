@@ -4,13 +4,13 @@ import { getAdapter } from '~utils';
 
 import { RINKEBY } from '~const';
 
-const connectNetwork = async (network = RINKEBY) => {
-  const networkClient = new ColonyNetworkClient({
+const networkClient = async (network = RINKEBY) => {
+  const client = new ColonyNetworkClient({
     adapter: getAdapter(network),
     query: {},
   });
-  await networkClient.init();
-  return networkClient;
+  await client.init();
+  return client;
 };
 
-export default connectNetwork;
+export default networkClient;
