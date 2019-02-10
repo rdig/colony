@@ -1,5 +1,14 @@
 import networkClient from './networkClient';
 
-networkClient();
+import { asyncCall } from '~utils';
 
-process.exit();
+const mainProcess = async () => {
+  const networkClientInstance = await networkClient();
+  const coloniesCount = await asyncCall(
+    networkClientInstance.getColonyCount,
+    'Loading Colonies',
+  );
+  console.log(coloniesCount);
+};
+
+mainProcess().then(process.exit);
