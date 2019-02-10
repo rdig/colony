@@ -1,21 +1,36 @@
 import minimist from 'minimist';
 import chalk from 'chalk';
+import flattenDeep from 'lodash.flattendeep';
 
-import { CONTEXTS } from '~const';
+import { CONTEXTS, ACTIONS, STATUS } from '~const';
 
 const { _: query, ...options } = minimist(process.argv.slice(2));
 
-const validateContext = (context) => {
-  const contextIndex = CONTEXTS.findIndex(currentContext => currentContext === context);
+const validateContext = (currentContext) => {
+  const contextIndex = CONTEXTS.findIndex(context => context === currentContext);
   if (contextIndex >= 0) {
-    return context;
+    return currentContext;
   }
-  throw new Error(chalk.red(`Specified context is not available: "${context}"`));
+  console.log(chalk.red(`Specified context is not available: "${currentContext}"`));
+  return process.exit(STATUS.CANNOT_EXECUTE);
+};
+
+const validateAction = (currentAction) => {
+  const actionIndex = flattenDeep(Object.values(ACTIONS))
+    .findIndex(action => action === currentAction);
+  if (actionIndex >= 0) {
+    return currentAction;
+  }
+  console.log(chalk.red(`Specified action is not available: "${currentAction}"`));
+  return process.exit(STATUS.CANNOT_EXECUTE);
 };
 
 export const getQuery = () => ({
   context: validateContext(query[0]),
-  action: query[1],
+  action: validateAction(query[1]),
+  /*
+   * @TODO Validate query selector (eg: Id, Id range, ensName)
+   */
   selector: query[2],
 });
 
