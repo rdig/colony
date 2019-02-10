@@ -9,6 +9,15 @@ module.exports = {
     filename: 'ctc.js',
     path: path.resolve(__dirname, 'dist')
   },
+  resolve: {
+    alias: Object.assign(
+      {},
+      {
+        '~utils': path.resolve(__dirname, 'src/utils'),
+        '~const': path.resolve(__dirname, 'src/constants'),
+      },
+    ),
+  },
   module: {
     rules: [
       {

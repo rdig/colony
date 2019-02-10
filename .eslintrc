@@ -14,5 +14,12 @@
     ],
     "indent": ["error", 2],
     "quotes": [2, "single", "avoid-escape"]
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "./webpack.config.js",
+      }
+    }
   }
 }

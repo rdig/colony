@@ -1,6 +1,6 @@
 import NetworkLoader from '@colony/colony-js-contract-loader-network';
 
-import { RINKEBY } from '../constants';
+import { RINKEBY } from '~const';
 
 const getNetworkLoader = (network = RINKEBY) => new NetworkLoader({ network });
 
