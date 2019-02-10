@@ -1,2 +1,3 @@
-# ctc
-Colony terminal client experiment
+# `colony`
+
+A Colony Network terminal client

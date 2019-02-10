@@ -1,9 +1,9 @@
 {
-  "name": "ctc",
+  "name": "colony",
   "version": "1.0.0",
-  "description": "Colony terminal client experiment",
+  "description": "A Colony Network terminal client",
   "private": true,
-  "main": "dist/ctc.js",
+  "main": "dist/colony.js",
   "scripts": {
     "lint": "eslint src",
     "lint:fix": "eslint --fix src",

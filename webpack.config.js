@@ -7,7 +7,7 @@ module.exports = {
   target: 'node',
   entry: './src/index.js',
   output: {
-    filename: 'ctc.js',
+    filename: 'colony.js',
     path: path.resolve(__dirname, 'dist')
   },
   resolve: {
