@@ -44,13 +44,13 @@ export const getQuery = () => {
   const context = validateContext(query[0]);
   const action = validateAction(query[1]);
   if (!context) {
-    console.log(`${chalk.yellow('You need to select the <context> in which to run')}
+    console.log(`${chalk.yellow('WARNING: You need to select the <context> in which to run')}
 `);
     getHelp();
     return process.exit(STATUS.NOT_FOUND);
   }
   if (!action) {
-    console.log(`${chalk.yellow('You need to select the <action> which should run in the <context>')}
+    console.log(`${chalk.yellow('WARNING: You need to select the <action> which should run in the <context>')}
 `);
     getHelp();
     return process.exit(STATUS.NOT_FOUND);

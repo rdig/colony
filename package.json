@@ -1,6 +1,6 @@
 {
   "name": "colony",
-  "version": "1.0.0",
+  "version": "0.1.0-alpha.0",
   "description": "A Colony Network terminal client",
   "private": true,
   "main": "dist/colony.js",
