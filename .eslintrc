@@ -13,7 +13,8 @@
       }
     ],
     "indent": ["error", 2],
-    "quotes": [2, "single", "avoid-escape"]
+    "quotes": [2, "single", "avoid-escape"],
+    "no-await-in-loop": ["off"]
   },
   "settings": {
     "import/resolver": {
