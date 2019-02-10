@@ -27,6 +27,19 @@ const validateAction = (currentAction) => {
   return process.exit(STATUS.CANNOT_EXECUTE);
 };
 
+/*
+ * @NOTE This assumes the action is already validated
+ */
+const normalizeActionAlias = (currentAction) => {
+  const actionKeys = Object.keys(ACTION);
+  for (let i = 0; i < actionKeys.length; i += 1) {
+    if (ACTION[actionKeys[i]].findIndex(action => action === currentAction)) {
+      return ACTION[actionKeys[i]][0];
+    }
+  }
+  return currentAction;
+};
+
 export const getQuery = () => {
   const context = validateContext(query[0]);
   const action = validateAction(query[1]);
@@ -44,7 +57,7 @@ export const getQuery = () => {
   }
   return {
     context,
-    action,
+    action: normalizeActionAlias(action),
     /*
      * @TODO Validate query selector (eg: Id, Id range, ensName)
      */
